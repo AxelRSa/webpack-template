@@ -10,7 +10,7 @@ module_config = (entry = "./src/index.js", output_path = "dist", html_template =
 		entry: entry,
 		devtool: mode == "production" ? false : "source-map",
 		target: mode == "production" ? "browserslist" : "web",
-		devServer: { contentBase: "./dist" },
+		devServer: { contentBase: "./dist", hot: true},
 		output: {
 			filename: mode === "production" ? "script.[hash].js" : "script.js",
 			path: path.resolve(__dirname, output_path),
